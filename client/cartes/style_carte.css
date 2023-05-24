@@ -1,0 +1,57 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #F5F5F5;
+    font-family: 'Reem Kufi', sans-serif;
+}
+
+.card {
+    width: auto;
+    min-width: 300px;
+    height: 500px;
+    color: #F5F5F5;
+    background-color: #4F0E6E;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    padding: 50px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+}
+
+.info-box {
+    margin: 5px;
+    border: 2px solid white;
+    border-radius: 20px;
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;  /* Pour s'assurer que typepartie et sidessections sont empilés verticalement */
+}
+
+.typepartie {
+    margin-bottom: 20px;    /* Pour donner un peu d'espace entre typepartie et sidessections */
+}
+
+.sidessections {
+    display: flex;          /* Pour faire en sorte que left-section et right-section s'affichent côte à côte */
+    justify-content: space-between; /* Pour répartir l'espace disponible de manière équitable entre left-section et right-section */
+}
+
+.left-section, .right-section {
+
+    width: 45%;  /* Ajusté pour donner de l'espace entre les deux sections */
+}
+
+h1 {
+    text-align: center;
+}
+
+img {
+    width: 20px;
+    height: 20px;
+}
