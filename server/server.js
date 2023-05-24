@@ -1,7 +1,7 @@
 //fichier du lancement du serveur
 //importation des modules
 const express = require('express');
-const app = express();
+const server = express();
 const port = 3000;
 
 let cardInfo = {
@@ -17,9 +17,9 @@ let cardInfo = {
     gameLength: 'courte',
 };
 
-app.use(express.json());
+server.use(express.json());
 
-app.post('/update-card', (req, res) => {
+server.post('/update-card', (req, res) => {
     const { title, gameType, chipList, totalChips, playerCount, gameLength } = req.body;
 
     cardInfo.title = title;
@@ -32,6 +32,6 @@ app.post('/update-card', (req, res) => {
     res.send('Card information updated successfully');
 });
 
-app.listen(port, () => {
+server.listen(port, () => {
     console.log(`App listening at http://localhost:${port}`);
 });
