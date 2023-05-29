@@ -2,56 +2,95 @@ window.addEventListener('DOMContentLoaded', (event) => {
     console.log('DOM fully loaded and parsed');
     fetch('http://localhost:3000/routes/get-all-cards')
         .then(response => response.json())
-        .then(cardData => createCard(cardData))
+        .then(allCards => insertCards(allCards))
         .catch(error => console.error('Error:', error));
 });
+
+function insertCards(cardDataArray) {
+    console.log(cardDataArray);
+    cardDataArray.forEach(cardData => createCard(cardData));
+}
 
 function createCard(cardData) {
     // Créer les éléments
     let card = document.createElement('div');
     let title = document.createElement('h2');
     let infoBox = document.createElement('div');
-    let typePartie = document.createElement('div');
+
+    let divGameType = document.createElement('div');
     let gameType = document.createElement('p');
+    let imgGameType = document.createElement('img');
+
     let sidesSections = document.createElement('div');
-    let leftSection = document.createElement('div');
+    let leftSection = chipToDiv(cardData.chipList);
     let rightSection = document.createElement('div');
-    let chipsDiv = chipToDiv(cardData.chipList);
+
+
+
+    let divTotalChips = document.createElement('div');
     let totalChips = document.createElement('p');
+    let imgTotalChips = document.createElement('img');
+
+    let divPlayerCount = document.createElement('div');
     let playerCount = document.createElement('p');
+    let imgPlayerCount = document.createElement('img');
+
+    let divGameLength = document.createElement('div');
     let gameLength = document.createElement('p');
+    let imgGameLength = document.createElement('img');
 
     // Attribuer les classes et id
     card.setAttribute('class', 'card');
     title.setAttribute('class', 'title_card');
     infoBox.setAttribute('class', 'info-box');
-    typePartie.setAttribute('class', 'typepartie');
+    divGameType.setAttribute('class', 'typepartie');
     gameType.setAttribute('class', 'game-type');
+    imgGameType.setAttribute('class', 'icon');
     sidesSections.setAttribute('class', 'sidessections');
     leftSection.setAttribute('class', 'left-section');
     rightSection.setAttribute('class', 'right-section');
-    chipsDiv.setAttribute('class', 'chip-list');
-    totalChips.setAttribute('class', 'total-chips');
-    playerCount.setAttribute('class', 'player-count');
-    gameLength.setAttribute('class', 'game-length');
+    divTotalChips.setAttribute('class', 'infos');
+    divPlayerCount.setAttribute('class', 'infos');
+    divGameLength.setAttribute('class', 'infos');
+    imgTotalChips.setAttribute('class', 'icon');
+    imgPlayerCount.setAttribute('class', 'icon');
+    imgGameLength.setAttribute('class', 'icon');
 
     // Ajouter les données de la carte aux éléments créés
     title.textContent = cardData.title;
     gameType.textContent = cardData.gameType;
-    totalChips.textContent = `Total chips: ${cardData.totalChips}`;
-    playerCount.textContent = `Player count: ${cardData.playerCount}`;
-    gameLength.textContent = `Game length: ${cardData.gameLength}`;
+    imgGameType.setAttribute('src', 'images/Bet icons white.png');
+    totalChips.textContent = cardData.totalChips;
+    imgTotalChips.setAttribute('src', 'images/hands and gestures icons white.png');
+    playerCount.textContent = cardData.playerCount;
+    imgPlayerCount.setAttribute('src', 'images/group icons white.png');
+    gameLength.textContent = cardData.gameLength;
+    imgGameLength.setAttribute('src', 'images/watch icons white.png');
+
 
     // Assembler les éléments
-    typePartie.appendChild(gameType);
-    leftSection.appendChild(chipsDiv);
-    rightSection.appendChild(totalChips);
-    rightSection.appendChild(playerCount);
-    rightSection.appendChild(gameLength);
+    divGameType.appendChild(imgGameType);
+    divGameType.appendChild(gameType);
+
+    divTotalChips.appendChild(imgTotalChips);
+    divTotalChips.appendChild(totalChips);
+
+    divPlayerCount.appendChild(imgPlayerCount);
+    divPlayerCount.appendChild(playerCount);
+
+    divGameLength.appendChild(imgGameLength);
+    divGameLength.appendChild(gameLength);
+
+    rightSection.appendChild(divTotalChips);
+    rightSection.appendChild(divPlayerCount);
+    rightSection.appendChild(divGameLength);
+
     sidesSections.appendChild(leftSection);
     sidesSections.appendChild(rightSection);
-    infoBox.appendChild(typePartie);
+
+    infoBox.appendChild(divGameType);
     infoBox.appendChild(sidesSections);
+
     card.appendChild(title);
     card.appendChild(infoBox);
     // Insérer la carte dans le document
@@ -63,10 +102,10 @@ function chipToDiv(chipList) {
     chipListDiv.setAttribute('class', 'chip-list');
     chipList.forEach(chip => {
         let divChip = document.createElement('div');
-        divChip.setAttribute('class', 'chip-infos');
+        divChip.setAttribute('class', 'infos');
 
         let imgChipIcon = document.createElement('img');
-        imgChipIcon.setAttribute('class', 'chip-icon');
+        imgChipIcon.setAttribute('class', 'icon');
         imgChipIcon.setAttribute('src', colorToIconURL(chip.color));
 
         let chipInfo = document.createElement('p');
@@ -96,8 +135,16 @@ function colorToIconURL(color) {
     return iconURL;
 }
 
-function insertCards(cardDataArray) {
-    cardDataArray.forEach(cardData => createCard(cardData));
-}
+/*
+0:
+    chipList:
+        0: {id: 1, color: 'noir', count: 10, value: 100, compositionId: 1}
+        1:{id: 2, color: 'bleu', count: 20, value: 50, compositionId: 1}
 
-console.log('script_classiques.js loaded')
+    gameLength: "courte"
+    gameType:"holdEm"
+    id: 1
+    playerCount: 5
+    title: "Composition 1"
+    totalChips: ??
+ */
