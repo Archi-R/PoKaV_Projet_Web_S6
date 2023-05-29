@@ -32,6 +32,11 @@ server.post('/update-card', (req, res) => {
     res.send('Card information updated successfully');
 });
 
+server.get('/get-card', (req, res) => {
+    console.log('GET request received');
+    res.send(cardInfo);
+});
+
 server.listen(port, () => {
     console.log(`App listening at http://localhost:${port}`);
 });

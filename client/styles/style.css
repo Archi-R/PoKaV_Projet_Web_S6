@@ -1,0 +1,83 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Reem Kufi', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.navbar{
+    background-color: #800080; /* Couleur violette */
+    height: 50px; /* Hauteur de la navbar */
+    display: flex; /* Pour aligner les éléments horizontalement */
+    align-items: center; /* Pour centrer verticalement les éléments */
+    /*padding: 2rem; /* Espacement entre les éléments */
+    padding: 1rem; /* Espacement */
+}
+
+.boutons_nav {
+    list-style-type: none; /* Pour enlever les puces */
+    padding: 0; /* Pour enlever les paddings */
+    display: flex; /* Pour aligner les éléments horizontalement */
+    margin-left: auto;/* coller les éléments à droite */
+}
+
+.boutons_nav li {
+    margin-right: 0px; /* Espacement entre les éléments */
+}
+
+.boutons_nav a {
+    color: #ffffff; /* Couleur du texte en blanc */
+    text-decoration: none; /* Pour enlever les soulignements */
+    text-transform: uppercase; /* Pour mettre le texte en majuscule */
+    padding: 100% 10px; /* Pour augmenter la zone cliquable */
+}
+
+.boutons_nav a:hover {
+    color: #cccccc; /* Couleur du texte quand la souris passe dessus */
+    background-color: #4F0E6E;
+}
+
+.bandeau {
+    position: relative; /* Pour positionner le titre par rapport à l'image */
+    width: 100%; /* Pour que le bandeau prenne toute la largeur */
+}
+
+.img_bandeau {
+    background-image: url('../images/bandeaau_je_vous_ai_plume_avec_ca.jpg');
+    background-position: center; /* Centrer l'image */
+    background-repeat: no-repeat; /* Pour ne pas répéter l'image */
+    background-size: cover; /* Pour que l'image couvre toute la div */
+    height: 11rem; /* Ajuster la hauteur comme vous voulez */
+    width: 100%; /* Pour que la div prenne toute la largeur */
+}
+
+.img_bandeau img {
+    width: 100%; /* Pour que l'image s'adapte à la largeur de son conteneur */
+    height: 100%; /* Pour garder les proportions de l'image */
+}
+
+.title {
+    position: absolute; /* Pour positionner le titre par rapport à l'image */
+    top: 50%; /* Pour centrer verticalement le titre */
+    left: 50%; /* Pour centrer horizontalement le titre */
+    transform: translate(-50%, -50%); /* Pour parfaire le centrage */
+    color: #ffffff; /* Couleur du texte en blanc */
+    font-size: 3em; /* Taille du texte */
+    text-decoration: none; /* Pour enlever les soulignements */
+    padding: 10px; /* Pour augmenter la zone cliquable */
+    text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.66);
+}

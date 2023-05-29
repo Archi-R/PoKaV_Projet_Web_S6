@@ -1,5 +1,3 @@
-// Remplissez ici les détails de votre jeu.
-// Ceci est un exemple de comment vous pourriez remplir dynamiquement les informations de votre carte en utilisant JavaScript.
 window.addEventListener('DOMContentLoaded', (event) => {
     fetch('http://localhost:3000/get-card')
         .then(response => response.json())
