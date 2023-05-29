@@ -1,6 +1,7 @@
 .card {
     width: auto;
     min-width: 300px;
+    max-width: 350px;
     height: 500px;
     color: #F5F5F5;
     background-color: #4F0E6E;

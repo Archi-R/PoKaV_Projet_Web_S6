@@ -1,6 +1,7 @@
 //fichier du lancement du serveur
 //importation des modules
 const express = require('express');
+const cors = require('cors');
 const server = express();
 const port = 3000;
 
@@ -18,6 +19,7 @@ let cardInfo = {
 };
 
 server.use(express.json());
+server.use(cors());
 
 server.post('/update-card', (req, res) => {
     const { title, gameType, chipList, totalChips, playerCount, gameLength } = req.body;
@@ -33,7 +35,7 @@ server.post('/update-card', (req, res) => {
 });
 
 server.get('/get-card', (req, res) => {
-    res.send(cardInfo);
+    res.status(200).json(cardInfo);
     console.log(cardInfo);
 });
 

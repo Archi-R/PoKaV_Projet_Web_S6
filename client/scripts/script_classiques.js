@@ -2,9 +2,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     console.log('DOM fully loaded and parsed');
     fetch('http://localhost:3000/get-card')
         .then(response => response.json())
-        .then(cardInfo => {
-            insertCards(cardInfo);
-        })
+        .then(cardData => createCard(cardData))
         .catch(error => console.error('Error:', error));
 });
 
@@ -44,9 +42,27 @@ function createCard(cardData) {
     playerCount.setAttribute('id', 'player-count');
     gameLength.setAttribute('id', 'game-length');
 
+    // Ajouter les données de la carte aux éléments créés
+    title.textContent = cardData.title;
+    gameType.textContent = cardData.gameType;
+    totalChips.textContent = `Total chips: ${cardData.totalChips}`;
+    playerCount.textContent = `Player count: ${cardData.playerCount}`;
+    gameLength.textContent = `Game length: ${cardData.gameLength}`;
+
+    // Assembler les éléments
+    typePartie.appendChild(gameType);
+    leftSection.appendChild(chipList);
+    rightSection.appendChild(totalChips);
+    rightSection.appendChild(playerCount);
+    rightSection.appendChild(gameLength);
+    sidesSections.appendChild(leftSection);
+    sidesSections.appendChild(rightSection);
+    infoBox.appendChild(typePartie);
+    infoBox.appendChild(sidesSections);
+    card.appendChild(title);
+    card.appendChild(infoBox);
     // Insérer la carte dans le document
-    document.body.appendChild(card);
-    // ou document.getElementById('cards-container').appendChild(card);
+    document.getElementById('cards-container').appendChild(card);
 }
 
 function insertCards(cardDataArray) {
