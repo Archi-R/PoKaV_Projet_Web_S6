@@ -2,13 +2,71 @@ main{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    background-color: #800080;
+    align-items: center;
     color: white;
 }
 
-form img{
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #800080;
+    width: 80%;
+    border-radius: 2rem;
+    margin : 2rem 0;
+}
+
+.compo div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem 1rem;
+}
+
+.compo label{
+    margin-right: 3rem;
+}
+
+.compo input, .compo select{
+    width: 20rem;
+    height: 2rem;
+    border-radius: 5px;
+    border: none;
+    margin-right: 3rem;
+    background: white;
+    padding: 0.5rem;
+}
+
+.jetons{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 1rem 1rem;
+}
+
+.jetons div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-basis: calc(20% - 2rem);
+    margin: 0.5rem;
+}
+
+.jetons div img{
     width: 50px;
     height: 50px;
     margin: 0 auto;
 }
 
+.jetons div input{
+    height: 2rem;
+    background: white;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: none;
+    margin: 0.5rem;
+}
