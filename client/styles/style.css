@@ -65,6 +65,16 @@ header{
     width: 100%; /* Pour que la div prenne toute la largeur */
 }
 
+.img_bandeau::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.3); /* Noir semi-transparent */
+}
+
 .img_bandeau img {
     width: 100%; /* Pour que l'image s'adapte à la largeur de son conteneur */
     height: 100%; /* Pour garder les proportions de l'image */
