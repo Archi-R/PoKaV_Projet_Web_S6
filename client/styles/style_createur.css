@@ -14,7 +14,7 @@ form{
     background-color: #800080;
     width: 80%;
     border-radius: 2rem;
-    margin : 2rem 0;
+    margin : 2rem 0 0;
 }
 
 .compo div{
@@ -69,4 +69,35 @@ form{
     border-radius: 5px;
     border: none;
     margin: 0.5rem;
+}
+
+.validation{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 1rem 1rem;
+    width: 60%;
+}
+
+.validation button{
+    width: 10rem;
+    height: auto;
+    border-radius: 5px;
+    border: none;
+    margin-right: 3rem;
+    padding: 0.5rem;
+    cursor: pointer;
+    background: #800080;
+    color: white;
+    font-family: 'Reem Kufi', sans-serif;
+    font-size: 16px;
+}
+
+.success{
+    display: flex;
+    align-items: center;
+    background: #66ff66;
+    padding: 0 0.5rem;
+    border-radius: 10px;
+    border: 2px solid #00cc00;
 }
