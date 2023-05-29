@@ -19,11 +19,66 @@ bouton.addEventListener('click', (event) => {
   console.log(title, gameType, playerCount, gameLength);
 
   // On récupère les valeurs des champs de jetons
-  // On récupère les champs de jetons dans un tableau
-  
+  // On crée un tableau vide pour stocker les jetons
+  const chipList = [];
+  // On récupère les infos du premier jeton
+  const chip_white = {
+    color: document.querySelector('input[name="jetons_blancs"').id,
+    count: document.querySelector('input[name="jetons_blancs"').value,
+    value: document.querySelector('input[name="valeur_blancs"]').value,
+  };
+  const chip_red = {
+    color: document.querySelector('input[name="jetons_rouges"').id,
+    count: document.querySelector('input[name="jetons_rouges"').value,
+    value: document.querySelector('input[name="valeur_rouges"]').value,
+  };
+  const chip_green = {
+    color: document.querySelector('input[name="jetons_verts"').id,
+    count: document.querySelector('input[name="jetons_verts"').value,
+    value: document.querySelector('input[name="valeur_verts"]').value,
+  };
+  const chip_blue = {
+    color: document.querySelector('input[name="jetons_bleus"').id,
+    count: document.querySelector('input[name="jetons_bleus"').value,
+    value: document.querySelector('input[name="valeur_bleus"]').value,
+  };
+  const chip_black = {
+    color: document.querySelector('input[name="jetons_noirs"').id,
+    count: document.querySelector('input[name="jetons_noirs"').value,
+    value: document.querySelector('input[name="valeur_noirs"]').value,
+  };
+  const chip_orange = {
+    color: document.querySelector('input[name="jetons_oranges"').id,
+    count: document.querySelector('input[name="jetons_oranges"').value,
+    value: document.querySelector('input[name="valeur_oranges"]').value,
+  };
+  const chip_grey = {
+    color: document.querySelector('input[name="jetons_gris"').id,
+    count: document.querySelector('input[name="jetons_gris"').value,
+    value: document.querySelector('input[name="valeur_gris"]').value,
+  };
+  const chip_yellow = {
+    color: document.querySelector('input[name="jetons_jaunes"').id,
+    count: document.querySelector('input[name="jetons_jaunes"').value,
+    value: document.querySelector('input[name="valeur_jaunes"]').value,
+  };
+  const chip_purple = {
+    color: document.querySelector('input[name="jetons_violets"').id,
+    count: document.querySelector('input[name="jetons_violets"').value,
+    value: document.querySelector('input[name="valeur_violets"]').value,
+  };
+  const chips = [chip_white, chip_red, chip_green, chip_blue, chip_black, chip_orange, chip_grey, chip_yellow, chip_purple];
 
+  const compoData = {
+    title: title,
+    gameType: gameType,
+    playerCount: playerCount,
+    gameLength: gameLength,
+    chips: chips,
+  }
 
-
+const compoDataJson = JSON.stringify(compoData);
+console.log(compoDataJson);
 
   // Afficher la span avec la classe "success"
   spanSuccess.style.display = 'flex';
