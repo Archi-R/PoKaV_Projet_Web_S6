@@ -82,6 +82,7 @@ header{
 
 .title {
     position: absolute; /* Pour positionner le titre par rapport à l'image */
+    z-index: 1; /* Pour placer le titre au premier plan */
     top: 50%; /* Pour centrer verticalement le titre */
     left: 50%; /* Pour centrer horizontalement le titre */
     transform: translate(-50%, -50%); /* Pour parfaire le centrage */
