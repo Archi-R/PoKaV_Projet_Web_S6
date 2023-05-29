@@ -64,11 +64,17 @@ form{
 
 .jetons div input{
     height: 2rem;
+    width: 5rem;
     background: white;
-    padding: 0.5rem;
+    padding-left: 0.5rem;
     border-radius: 5px;
     border: none;
     margin: 0.5rem;
+}
+
+.jetons div span{
+    font-size: 2.5rem;
+    margin-left: 0.5rem;
 }
 
 .validation{
