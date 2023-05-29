@@ -1,6 +1,6 @@
 window.addEventListener('DOMContentLoaded', (event) => {
     console.log('DOM fully loaded and parsed');
-    fetch('http://localhost:3000/get-card')
+    fetch('http://localhost:3000/routes/get-all-cards')
         .then(response => response.json())
         .then(cardData => createCard(cardData))
         .catch(error => console.error('Error:', error));
