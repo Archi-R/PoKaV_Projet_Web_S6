@@ -6,7 +6,6 @@ CREATE TABLE Compositions (
                               id INT AUTO_INCREMENT PRIMARY KEY,
                               title VARCHAR(255),
                               gameType ENUM('holdEm', 'fermé'),
-                              totalChips INT,
                               playerCount INT,
                               gameLength ENUM('courte', 'longue')
 );
