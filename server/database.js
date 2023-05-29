@@ -2,8 +2,8 @@ const mariadb = require('mariadb');
 
 const config = {
     host: 'localhost',
-    user: 'username',
-    password: 'root',
+    user: 'root',
+    password: '',
     database: 'PoKaV'
 };
 

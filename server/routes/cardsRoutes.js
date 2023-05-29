@@ -20,8 +20,10 @@ router.get('/get-all-cards', async (req, res) => {
     let conn;
     try {
         conn = await db.createConnection();
-        //const rows = await conn.query("SELECT * FROM compositions");
-        // faire une requête SQL pour obtenir les données d'une composition
+        const rows = await conn.query("SELECT * FROM compositions");
+        console.log(rows);
+
+
         res.status(200).json(rows);
     } catch (err) {
         console.log(err);
