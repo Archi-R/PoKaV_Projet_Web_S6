@@ -33,8 +33,8 @@ server.post('/update-card', (req, res) => {
 });
 
 server.get('/get-card', (req, res) => {
-    console.log('GET request received');
     res.send(cardInfo);
+    console.log(cardInfo);
 });
 
 server.listen(port, () => {
