@@ -77,8 +77,21 @@ bouton.addEventListener('click', (event) => {
     chips: chips,
   }
 
-const compoDataJson = JSON.stringify(compoData);
-console.log(compoDataJson);
+  const compoDataJson = JSON.stringify(compoData);
+  console.log(compoDataJson);
+
+  fetch('http://localhost:3000/routes/create-card', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: compoDataJson,
+  })
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch((error) => {
+   //console.log('Error:', error);
+  });
 
   // Afficher la span avec la classe "success"
   spanSuccess.style.display = 'flex';

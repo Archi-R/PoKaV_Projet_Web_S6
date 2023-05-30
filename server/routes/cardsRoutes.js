@@ -32,7 +32,9 @@ router.get('/get-all-cards', async (req, res) => {
 });
 
 router.post('/create-card', async (req, res) => {
-    //for Théo le sac
+    console.log("en tah la sandale");
+
+    res.send("Données reçues avec succès !");
 });
 
 
