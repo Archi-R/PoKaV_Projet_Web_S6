@@ -92,3 +92,53 @@ header{
     padding: 10px; /* Pour augmenter la zone cliquable */
     text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.66);
 }
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    color: white;
+}
+
+.creation, .compo_classiques{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    border-radius: 2rem;
+    margin-top: 2rem;
+}
+
+.creation img, .compo_classiques img{
+    width: 100%;
+    height: auto;
+    border-radius: 2rem;
+}
+
+.crea {
+    position: absolute; /* Pour positionner le titre par rapport à l'image */
+    z-index: 1; /* Pour placer le titre au premier plan */
+    top: 50%; /* Pour centrer verticalement le titre */
+    left: 50%; /* Pour centrer horizontalement le titre */
+    transform: translate(-50%, -50%); /* Pour parfaire le centrage */
+    color: #ffffff; /* Couleur du texte en blanc */
+    font-size: 2rem; /* Taille du texte */
+    text-decoration: none; /* Pour enlever les soulignements */
+    padding: 10px; /* Pour augmenter la zone cliquable */
+    text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.66);
+}
+
+.classiq{
+    position: absolute; /* Pour positionner le titre par rapport à l'image */
+    z-index: 1; /* Pour placer le titre au premier plan */
+    top: 115%; /* Pour centrer verticalement le titre */
+    left: 50%; /* Pour centrer horizontalement le titre */
+    transform: translate(-50%, -50%); /* Pour parfaire le centrage */
+    color: #ffffff; /* Couleur du texte en blanc */
+    font-size: 2rem; /* Taille du texte */
+    text-decoration: none; /* Pour enlever les soulignements */
+    padding: 10px; /* Pour augmenter la zone cliquable */
+    text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.66);
+}
