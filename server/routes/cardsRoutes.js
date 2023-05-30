@@ -12,12 +12,15 @@ router.get('/get-all-cards', async (req, res) => {
         for (let i = 0; i < rows.length; i++) {
             rows[i].totalChips = 0;
             rows[i].chipList = [];
+            //foreach chip
             for (let j = 0; j < chips.length; j++) {
                 if(rows[i].id === chips[j].compositionId) {
-                    rows[i].totalChips += chips[j].count;
-                    delete chips[j].compositionId;
-                    delete chips[j].id;
-                    rows[i].chipList.push(chips[j]);
+                    if (chips[j].value !== 0){
+                        rows[i].totalChips += chips[j].count;
+                        delete chips[j].compositionId;
+                        delete chips[j].id;
+                        rows[i].chipList.push(chips[j]);
+                    }
                 }
             }
             delete rows[i].id;
@@ -35,10 +38,27 @@ router.get('/get-all-cards', async (req, res) => {
 
 router.post('/create-card', async (req, res) => {
     //for Théo le sac
+    const { title, gameType, chipList, playerCount, gameLength } = req.body;
+    let conn;
+    try {
+        conn = await db.createConnection();
+        const idmax = await conn.query("SELECT MAX(id) FROM compositions");
+        const id = idmax[0]['MAX(id)'] + 1;
+
+        console.log(id);
+
+        const rows = await conn.query("INSERT INTO compositions (title, gameType, playerCount, gameLength) VALUES (?, ?, ?, ?)", [title, gameType, playerCount, gameLength]);
+        for (let i = 0; i < chipList.length; i++) {
+            await conn.query("INSERT INTO jetons (compositionId, color, count, value) VALUES (?, ?, ?, ?)", [id, chipList[i].color, chipList[i].count, chipList[i].value]);
+        }
+        res.status(200).send('Card created successfully');
+    } catch (err) {
+        console.log(err);
+        res.status(500).send(err);
+    } finally {
+        if (conn) conn.end();
+    }
 });
-
-
-
 
 module.exports = router;
 

@@ -53,6 +53,8 @@
     padding-bottom: 5px;
     border-bottom: white 2px solid;
     width: 60%;
+    /* initiale en majuscule */
+    text-transform: capitalize;
 }
 
 .sidessections {
