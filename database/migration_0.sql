@@ -16,5 +16,5 @@ CREATE TABLE Jetons (
                        count INT,
                        value INT,
                        compositionId INT,
-                       FOREIGN KEY (compositionId) REFERENCES Compositions(id)
+                       FOREIGN KEY (compositionId) REFERENCES Compositions(id) ON DELETE CASCADE
 );
