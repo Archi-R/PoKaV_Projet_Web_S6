@@ -45,7 +45,7 @@ router.post('/create-card', async (req, res) => {
         const idmax = await conn.query("SELECT MAX(id) FROM compositions");
         const id = idmax[0]['MAX(id)'] + 1;
 
-        console.log(id);
+        console.log("idmax : " + id);
 
         const rows = await conn.query("INSERT INTO compositions (title, gameType, playerCount, gameLength) VALUES (?, ?, ?, ?)", [title, gameType, playerCount, gameLength]);
         for (let i = 0; i < chipList.length; i++) {
