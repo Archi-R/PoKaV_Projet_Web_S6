@@ -76,19 +76,6 @@ bouton.addEventListener('click', (event) => {
   const compoDataJson = JSON.stringify(compoData);
   console.log(compoDataJson);
 
-  fetch('http://localhost:3000/routes/create-card', {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json',
-  },
-  body: compoDataJson,
-  })
-  .then(response => response.json())
-  .then(data => console.log(data))
-  .catch((error) => {
-   //console.log('Error:', error);
-  });
-
   try {
     // Envoyer les données au serveur
     fetch('http://localhost:3000/routes/create-card', {

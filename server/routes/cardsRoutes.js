@@ -37,7 +37,6 @@ router.get('/get-all-cards', async (req, res) => {
 });
 
 router.post('/create-card', async (req, res) => {
-    //for Théo le sac
     const { title, gameType, chipList, playerCount, gameLength } = req.body;
     let conn;
     try {
